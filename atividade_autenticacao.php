@@ -20,10 +20,10 @@ $senha = $_POST["senha"];
 if ($nome == "PROFESSOR" && $senha == "DEVISATE") {
     echo "funcionou";
 }
-else if ($nome == "COORDENADOR" && $senha == "DEVISATE") {
+if ($nome == "COORDENADOR" && $senha == "DEVISATE") {
     echo "funcionou";
 }
-    else {
+else if ($nome != "PROFESSOR" or $nome != "COORDENADOR" or $senha != "DEVISATE") {
     echo "funcionou nao";
 }
 
