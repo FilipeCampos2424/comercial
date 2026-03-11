@@ -16,15 +16,21 @@ $nome = $_POST["nome"];
 if (isset($_POST{"senha"})) {
 $senha = $_POST["senha"];
 
+if (($nome != "PROFESSOR" && $nome != "COORDENADOR") && $senha != "DEVISATE") {
+    echo "Erro: nome de usuário e senha inválidos.";
+}
 
-if ($nome == "PROFESSOR" && $senha == "DEVISATE") {
-    echo "funcionou";
+elseif (($nome == "PROFESSOR" || $nome == "COORDENADOR") && $senha == "DEVISATE") {
+echo ("Bem-vindo, ".$nome."! Você realizou acesso às ".date("H:i")." do dia ".date("d/m/Y"));
+
 }
-if ($nome == "COORDENADOR" && $senha == "DEVISATE") {
-    echo "funcionou";
+
+elseif ($nome != "PROFESSOR" && $nome != "COORDENADOR") {
+    echo "Erro: nome de usuário inválido.";
 }
-else if ($nome != "PROFESSOR" or $nome != "COORDENADOR" or $senha != "DEVISATE") {
-    echo "funcionou nao";
+
+else {
+    echo "Erro: senha incorreta.";
 }
 
 }
