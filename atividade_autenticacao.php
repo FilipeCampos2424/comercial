@@ -16,6 +16,19 @@ $nome = $_POST["nome"];
 if (isset($_POST{"senha"})) {
 $senha = $_POST["senha"];
 
+# Usei strlen para contar os caracteres das variáveis
+
+if (strlen($nome) < 4 || strlen($nome) > 15) {
+    echo("Erro: o nome de usuário deve ter entre 4 e 15 caracteres.");
+}
+
+elseif (strlen($senha) < 4 || strlen($senha) > 15) {
+    echo("Erro: a senha deve ter entre 4 e 15 caracteres.");
+}
+
+else {
+
+
 if (($nome != "PROFESSOR" && $nome != "COORDENADOR") && $senha != "DEVISATE") {
     echo "Erro: nome de usuário e senha inválidos.";
 }
@@ -31,6 +44,7 @@ elseif ($nome != "PROFESSOR" && $nome != "COORDENADOR") {
 
 else {
     echo "Erro: senha incorreta.";
+}
 }
 
 }
